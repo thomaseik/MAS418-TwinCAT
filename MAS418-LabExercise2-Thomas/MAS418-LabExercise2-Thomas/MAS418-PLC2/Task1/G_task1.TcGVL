@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="G_task1" Id="{86e03228-c76c-4748-8fb8-8cf612a64aa1}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	dtCurrentDt : DATE_AND_TIME := DT#2023-02-07-14:00:00;
+	tTime : TIME := T#5S;
+	aArray : ARRAY[1..4] OF DATE := [D#2023-02-07, D#2023-02-08, D#2023-02-09, D#2023-02-10];
+	eSensor1 : Sensors;
+	
+    bTimerStart : BOOL; 
+	tTimer : TIME := T#10S; 
+	bTimerOn : BOOL;
+	tElapsedTime : TIME; 
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
