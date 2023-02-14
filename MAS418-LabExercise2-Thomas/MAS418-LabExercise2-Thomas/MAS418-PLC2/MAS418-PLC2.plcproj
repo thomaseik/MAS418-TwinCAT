@@ -46,6 +46,9 @@
     <Compile Include="Task2\p_task2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Task3\E_StateMachine.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Task3\F_UpdatePara2.TcPOU">
       <SubType>Code</SubType>
     </Compile>

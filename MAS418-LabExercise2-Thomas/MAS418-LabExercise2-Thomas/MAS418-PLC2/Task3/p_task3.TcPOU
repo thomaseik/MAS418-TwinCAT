@@ -6,6 +6,11 @@ VAR
 	fbRTrig : R_TRIG;
 	bUpdateSpeed : BOOL;
 	fNewValue : REAL;
+	
+	eStateMachine 	: E_StateMachine; 
+	bEnable 		: BOOL;
+	bStart 			: BOOL;
+	bStop 			: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -15,7 +20,28 @@ END_VAR
 F_UpdatePara(bUpdateValue := fbRTrig.Q, fNewValue :=  fNewValue, stMotorPara := g_task3.stMotorPara);
 
 F_UpdatePara2(bUpdateValue := fbRTrig.Q, fNewValue :=  fNewValue, stMotorPara := g_task3.stMotorPara2);
-]]></ST>
+
+
+CASE eStateMachine OF
+	E_StateMachine.State1: 
+		IF bEnable THEN
+			eStateMachine := E_StateMachine.State2;
+		END_IF
+		
+	E_StateMachine.State2: 
+		IF NOT(bEnable) OR bStop THEN
+			eStateMachine := E_StateMachine.State1;
+		ELSIF bStart THEN
+			eStateMachine := E_StateMachine.State3;
+		END_IF
+		
+	E_StateMachine.State3: 
+		IF NOT(bEnable) OR bStop THEN
+			eStateMachine := E_StateMachine.State1;
+		END_IF
+ELSE 
+	eStateMachine := E_StateMachine.State1;
+END_CASE]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
