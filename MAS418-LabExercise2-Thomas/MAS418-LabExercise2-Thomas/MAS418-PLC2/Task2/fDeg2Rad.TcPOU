@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="fDeg2Rad" Id="{c367d73b-9ceb-4476-95a1-89bdb986e7cd}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION fDeg2Rad : REAL
+VAR_INPUT
+	fDeg : LREAL;
+END_VAR
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fDeg2Rad := fDeg * (3.14/180);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

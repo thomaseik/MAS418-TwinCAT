@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="g_task3" Id="{82780ca5-cb4a-4f37-83e0-6edcc90aaff0}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	fNewParameter : REAL;
+	stMotorPara : ST_MotorPara;
+	stMotorPara2 : ST_MotorPara;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

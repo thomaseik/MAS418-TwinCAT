@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="p_task3" Id="{0ef3bee3-0b75-4aa5-a898-1cdb12b061eb}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_task3
+VAR
+	fbRTrig : R_TRIG;
+	bUpdateSpeed : BOOL;
+	fNewValue : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbRTrig(CLK := bUpdateSpeed);
+
+
+F_UpdatePara(bUpdateValue := fbRTrig.Q, fNewValue :=  fNewValue, stMotorPara := g_task3.stMotorPara);
+
+F_UpdatePara2(bUpdateValue := fbRTrig.Q, fNewValue :=  fNewValue, stMotorPara := g_task3.stMotorPara2);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

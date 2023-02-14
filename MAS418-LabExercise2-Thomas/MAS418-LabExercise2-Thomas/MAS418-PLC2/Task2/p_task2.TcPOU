@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="p_task2" Id="{84d5279c-ad27-4342-b666-64b5c2b4471a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_task2
+VAR
+	fbTOF : TOF;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbTOF(
+	IN := g_task2.stTimer2.bTimerStart,
+	PT := g_task2.stTimer2.tTimer,
+	ET => g_task2.stTimer2.tElapsedTime,
+	Q => g_task2.stTimer2.bTimerOn
+);
+
+g_task2.fAngPosM1rad := fDeg2Rad(g_task2.fAngPosM1deg);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
